@@ -20,6 +20,8 @@
 }
 
 #app .container-view {
+  position: relative;
+  height:82%;
   padding: 20px;
 }
 
