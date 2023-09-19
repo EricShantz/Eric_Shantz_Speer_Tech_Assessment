@@ -30,6 +30,17 @@ margin-bottom: 5rem;
 margin-left: auto;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px; /* Adjust the margin as needed */
+  }
+
+.archive-all-button{
+    height: 1.8rem;
+    margin: 1rem auto !important;
+}
+
 
 /* Hide Scrollbar */
 ::-webkit-scrollbar {

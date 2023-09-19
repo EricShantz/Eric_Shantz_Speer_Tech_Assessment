@@ -5,6 +5,7 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
 import DialpadIcon from '@mui/icons-material/Dialpad';
 import PersonIcon from '@mui/icons-material/Person';
+import InboxIcon from '@mui/icons-material/Inbox';
 import'../css/tabbar.css'
 
 
@@ -24,6 +25,7 @@ const TabBar = ({ currentTab, setCurrentTab }) => {
                 <BottomNavigationAction label="Call History" value={"CallHistory"} icon={<RestoreIcon />} />
                 <BottomNavigationAction label="Keypad" value={"Keypad"} icon={<DialpadIcon />} />
                 <BottomNavigationAction label="Contacts" value={"Contacts"} icon={<PersonIcon />} />
+                <BottomNavigationAction label="Archives" value={"ArchivedCalls"} icon={<InboxIcon />} />
             </BottomNavigation>
         </Box>
       </div>
