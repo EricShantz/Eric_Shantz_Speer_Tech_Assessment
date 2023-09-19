@@ -10,18 +10,8 @@ export function GetCallHistory() {
 }
 
 export function ArchiveOne(callDetails) {
-  let updatedCallBody = {
-    call_type: callDetails.call_type ? callDetails.call_type : null,
-    created_at:callDetails.created_at ? callDetails.created_at : null,
-    direction:callDetails.direction ? callDetails.direction : null,
-    duration:callDetails.duration ? callDetails.duration : null,
-    from:callDetails.from ? callDetails.from : null,
-    id:callDetails.id,
-    is_archived:true,
-    to:callDetails.to ? callDetails.to : null,
-    via:callDetails.via ? callDetails.via : null,
-  }
 
+  let updatedCallBody = Object.assign({}, callDetails, { is_archived: true });
 
   return fetch(`${base_url}/activities/${callDetails.id}`,   
   {
@@ -40,17 +30,8 @@ export function ArchiveOne(callDetails) {
 }
 
 export function RestoreOne(callDetails) {
-  let updatedCallBody = {
-    call_type: callDetails.call_type ? callDetails.call_type : null,
-    created_at:callDetails.created_at ? callDetails.created_at : null,
-    direction:callDetails.direction ? callDetails.direction : null,
-    duration:callDetails.duration ? callDetails.duration : null,
-    from:callDetails.from ? callDetails.from : null,
-    id:callDetails.id,
-    is_archived:false,
-    to:callDetails.to ? callDetails.to : null,
-    via:callDetails.via ? callDetails.via : null,
-  }
+
+  let updatedCallBody = Object.assign({}, callDetails, { is_archived: false });
 
   return fetch(`${base_url}/activities/${callDetails.id}`,   
   {
@@ -80,9 +61,9 @@ export function ArchiveAll(allCalls) {
     .catch((error) => {
       console.error('Error archiving items', error);
       throw error; 
-    }).finally(()=>{
-    });
+    })
 }
+
 export function RestoreAll(allCalls) {
   let itemsToUpdate = allCalls.filter((item) => item.is_archived);
 

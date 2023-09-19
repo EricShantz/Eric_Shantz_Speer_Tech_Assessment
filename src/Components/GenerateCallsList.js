@@ -8,7 +8,6 @@ import PhoneDisabledIcon from '@mui/icons-material/PhoneDisabled';
 
 const GenerateListItems = (data, toggleModal, archives) => {
   const groupedCalls = {};
-  console.log("LIST: ", data)
 
   const sortedCalls = data.sort((a, b) => {
     return new Date(b.created_at) - new Date(a.created_at);
