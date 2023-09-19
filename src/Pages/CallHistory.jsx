@@ -51,7 +51,7 @@ const CallHistory = () => {
       {listItems}
 
       {isModalOpen &&       
-        <div className="modal-overlay modal-open" onClick={() => setIsModalOpen(false)}></div>
+        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}></div>
       }
       {isModalOpen &&       
         <CallDetailsModal callDetails={selectedCallDetails} toggleModal={toggleModal} />

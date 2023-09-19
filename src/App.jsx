@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import CallHistory from './Pages/CallHistory.jsx';
-import Contacts from './Pages/Contacts.jsx';
 import Keypad from './Pages/Keypad.jsx';
 import ArchivedCalls from './Pages/ArchivedCalls.jsx';
 import TabBar from './Components/TabBar.jsx';
@@ -13,6 +12,7 @@ const App = () => {
   return (
     <div className='container'>
       <div className="container-view">
+
         <CSSTransition
           in={currentPage === 'CallHistory'}
           timeout={300}
@@ -29,15 +29,6 @@ const App = () => {
           unmountOnExit
         >
           <ArchivedCalls />
-        </CSSTransition>
-
-        <CSSTransition
-          in={currentPage === 'Contacts'}
-          timeout={300}
-          classNames="page"
-          unmountOnExit
-        >
-          <Contacts />
         </CSSTransition>
 
         <CSSTransition

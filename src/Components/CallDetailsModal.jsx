@@ -54,15 +54,31 @@ const CallDetailsModal = ({callDetails, toggleModal}) => {
     <div className="modal-body">
       <h2 className="modal-title">Call Details</h2>
       <CloseIcon onClick={toggleModal} className="close-icon" />
-      <p>Call Type: {callDetails.call_type || "N/A"}</p>
-      <p>From: {callDetails.from || "Unknown"}</p>
-      <p>Datetime: {formatDateTime(callDetails.created_at)  || "N/A"}</p>
-      <p>Duration: {formatDuration(callDetails.duration)}</p>
-      {!callDetails.is_archived ? 
-      <Button variant="outlined" className="archive-button" onClick={handleArchiveClick}>Archive</Button>
-      :
-      <Button variant="outlined" className="archive-button" onClick={handleRestoreClick}>Restore</Button>
-      }
+      <div className="modal-column">
+        <p className="modal-subtitle">Call Type: </p>
+        <p className="modal-content">{callDetails.call_type || "N/A"} </p>
+      </div>
+      <div className="modal-column">
+        <p className="modal-subtitle">From: </p>
+        <p className="modal-content">{callDetails.from || "Unknown"} </p>
+      </div>
+      <div className="modal-column">
+        <p className="modal-subtitle">Datetime: </p>
+        <p className="modal-content">{formatDateTime(callDetails.created_at)  || "N/A"} </p>
+      </div>
+      <div className="modal-column">
+        <p className="modal-subtitle">Duration: </p>
+        <p className="modal-content">{formatDuration(callDetails.duration)} </p>
+
+      </div>
+
+      <div className="button-div">
+        {!callDetails.is_archived ? 
+        <Button variant="outlined" className="archive-button" onClick={handleArchiveClick}>Archive</Button>
+        :
+        <Button variant="outlined" className="archive-button" onClick={handleRestoreClick}>Restore</Button>
+        }
+    </div>
     </div>
   );
 };

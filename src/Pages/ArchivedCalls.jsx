@@ -24,7 +24,6 @@ const ArchivedCalls = () => {
 
     }
 
-
   const toggleModal = (callDetails) => {
     setSelectedCallDetails(callDetails);
     setIsModalOpen(!isModalOpen);

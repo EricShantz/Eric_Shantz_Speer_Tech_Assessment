@@ -2,8 +2,8 @@ import React from "react"
 import '../css/list-items.css';
 import { format } from 'date-fns';
 import PhoneMissedIcon from '@mui/icons-material/PhoneMissed';
-import CallReceivedIcon from '@mui/icons-material/CallReceived';
-import PhoneForwardedIcon from '@mui/icons-material/PhoneForwarded';
+import VoicemailIcon from '@mui/icons-material/Voicemail';
+import PhoneCallbackIcon from '@mui/icons-material/PhoneCallback';
 import PhoneDisabledIcon from '@mui/icons-material/PhoneDisabled';
 
 const GenerateListItems = (data, toggleModal, archives) => {
@@ -25,10 +25,10 @@ const GenerateListItems = (data, toggleModal, archives) => {
     switch (type) {
       case "missed":
         return <PhoneMissedIcon style={{ color: 'red' }} className="icon-base" />;
-      case "incoming":
-        return <CallReceivedIcon className="icon-base" />;
-      case "outgoing":
-        return <PhoneForwardedIcon className="icon-base" />;
+      case "voicemail":
+        return <VoicemailIcon className="icon-base" />;
+      case "answered":
+        return <PhoneCallbackIcon className="icon-base" />;
       default:
         return <PhoneDisabledIcon className="icon-base" />;
     }

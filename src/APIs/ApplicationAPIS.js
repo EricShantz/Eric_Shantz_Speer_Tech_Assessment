@@ -10,8 +10,7 @@ export function GetCallHistory() {
 }
 
 export function ArchiveOne(callDetails) {
-
-  let updatedCallBody = Object.assign({}, callDetails, { is_archived: true });
+  let updatedCallBody = Object.assign({}, callDetails, { is_archived: true});
 
   return fetch(`${base_url}/activities/${callDetails.id}`,   
   {
@@ -79,3 +78,11 @@ export function RestoreAll(allCalls) {
       throw error; 
     });
 }
+
+
+//TODO:
+// * add toast
+// * fix broken calls
+// * fix animations
+// * add loaders
+// * add "No calls to display" if list is empty
